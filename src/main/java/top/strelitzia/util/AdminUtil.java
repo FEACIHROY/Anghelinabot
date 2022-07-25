@@ -54,4 +54,18 @@ public class AdminUtil {
         }
         return false;
     }
+    /**
+     * 返回用户有无图库编辑权限
+     * @param qq     qqMD5加密字符串
+     * @param admins 权限列表
+     * @return
+     */
+    public static boolean getPiceditAdmin(Long qq, List<AdminUserInfo> admins) {
+        for (AdminUserInfo admin : admins) {
+            if (admin.getQq().equals(qq) && admin.getPicedit() == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

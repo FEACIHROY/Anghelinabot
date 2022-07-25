@@ -16,6 +16,8 @@ public class AdminUserInfo {
     private Integer six;
     //SQL查询权限
     private Integer sql;
+    //图库编辑权限
+    private Integer picedit;
 
 
     public Long getQq() {
@@ -56,5 +58,9 @@ public class AdminUserInfo {
 
     public void setSql(Integer sql) {
         this.sql = sql;
+    }
+
+    public Integer getPicedit() {
+        return picedit;
     }
 }
