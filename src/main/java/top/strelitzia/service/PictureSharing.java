@@ -8,7 +8,6 @@ import top.angelinaBot.model.MessageInfo;
 import top.angelinaBot.model.ReplayInfo;
 import top.strelitzia.dao.AdminUserMapper;
 import top.strelitzia.model.AdminUserInfo;
-import top.strelitzia.util.AdminUtil;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -72,7 +71,9 @@ public class PictureSharing {
         if (messageInfo.getArgs().size() > 1) {
             //先判断是否有图库编辑权限
             List<AdminUserInfo> admins = adminUserMapper.selectAllAdmin();
-            boolean b = AdminUtil.getPiceditAdmin(messageInfo.getQq(), admins);
+            /*long qq = messageInfo.getQq();
+            boolean b = AdminUtil.getPiceditAdmin(qq, admins);*/
+            //boolean piceditAdmin = AdminUtil.getSqlAdmin(messageInfo.getQq(), adminUserMapper.selectAllAdmin());
             if (true) {
                 String code = messageInfo.getArgs().get(1);
                 switch (code) {
