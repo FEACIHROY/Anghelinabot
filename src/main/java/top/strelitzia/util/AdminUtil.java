@@ -54,6 +54,7 @@ public class AdminUtil {
         }
         return false;
     }
+
     /**
      * 返回用户有无图库编辑权限
      * @param qq     qqMD5加密字符串
@@ -68,4 +69,35 @@ public class AdminUtil {
         }
         return false;
     }
+
+    /**
+     * 返回用户有无彩蛋语音概率拉满权限
+     * @param qq     qqMD5加密字符串
+     * @param admins 权限列表
+     * @return
+     */
+    public static boolean getIntimateAdmin(Long qq, List<AdminUserInfo> admins) {
+        for (AdminUserInfo admin : admins) {
+            if (admin.getQq().equals(qq) && admin.getIntimate() == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * 返回用户有无踹他权限
+     * @param qq     qqMD5加密字符串
+     * @param admins 权限列表
+     * @return
+     */
+    public static boolean getStepAdmin(Long qq, List<AdminUserInfo> admins) {
+        for (AdminUserInfo admin : admins) {
+            if (admin.getQq().equals(qq) && admin.getStep() == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

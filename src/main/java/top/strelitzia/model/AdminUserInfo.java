@@ -18,6 +18,10 @@ public class AdminUserInfo {
     private Integer sql;
     //图库编辑权限
     private Integer picedit;
+    //彩蛋语音概率拉满权限
+    private Integer intimate;
+    //踹他权限及今日老婆管理权限
+    private Integer step;
 
 
     public Long getQq() {
@@ -62,5 +66,25 @@ public class AdminUserInfo {
 
     public Integer getPicedit() {
         return picedit;
+    }
+
+    public void setPicedit(Integer picedit) {
+        this.picedit = picedit;
+    }
+
+    public Integer getIntimate() {
+        return intimate;
+    }
+
+    public void setIntimate(Integer intimate) {
+        this.intimate = intimate;
+    }
+
+    public Integer getStep() {
+        return step;
+    }
+
+    public void setStep(Integer step) {
+        this.step = step;
     }
 }

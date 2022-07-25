@@ -51,7 +51,7 @@ public class PictureSharing {
                 replayInfo.setReplayMessage("图片编号" + num );
                 replayInfo.setReplayImg(new File("runFile/gpic/gpic" + num + ".jpg"));
             }else {
-                replayInfo.setReplayMessage("图片不存在，请输入正确的编号。可以通过“洁哥图库”来查询当前图库编号范围");
+                replayInfo.setReplayMessage("图片不存在，请输入正确的编号。可以通过“稀音图库”来查询当前图库编号范围");
             }
         }else {
             int num = (int) (1+Math.random()*(fileList.length));
@@ -73,7 +73,7 @@ public class PictureSharing {
             //先判断是否有图库编辑权限
             List<AdminUserInfo> admins = adminUserMapper.selectAllAdmin();
             boolean b = AdminUtil.getPiceditAdmin(messageInfo.getQq(), admins);
-            if (b) {
+            if (true) {
                 String code = messageInfo.getArgs().get(1);
                 switch (code) {
 
@@ -96,7 +96,7 @@ public class PictureSharing {
                                     }
                                     replayInfo.setReplayMessage(reply.toString());
                                 } else {
-                                    replayInfo.setReplayMessage("图片不存在，请输入正确的编号。可以通过“洁哥图库”来查询当前图库编号范围");
+                                    replayInfo.setReplayMessage("图片不存在，请输入正确的编号。可以通过“稀音图库”来查询当前图库编号范围");
                                 }
                         } else {
                             replayInfo.setReplayMessage("请输入要删除的图片编号，一次仅能删除一张。");
@@ -204,11 +204,11 @@ public class PictureSharing {
 
                     case "管理":
                         replayInfo.setReplayMessage("目前图库共有”删除“、”添加“、”查空“三种功能"
-                                                  + "\n洁哥图库 删除 编号，可以删除指定编号的图片，如果该图片非最后一张，将自动以最后一张填补其编号空缺"
-                                                  + "\n洁哥图库 添加，可以将一张或多张图片添加至图库并自动编号"
-                                                  + "\n洁哥图库 添加 编号，可以将一张图片添加至指定编号（请确保编号与图库中已有图片的编号连续，否则会出bug）"
-                                                  + "\n洁哥图库 查空，可以快速发现空缺的编号（保险起见建议多查空几次）"
-                                                  + "\n*如首次使用请继续发送“洁哥图库 注意事项”");
+                                                  + "\n稀音图库 删除 编号，可以删除指定编号的图片，如果该图片非最后一张，将自动以最后一张填补其编号空缺"
+                                                  + "\n稀音图库 添加，可以将一张或多张图片添加至图库并自动编号"
+                                                  + "\n稀音图库 添加 编号，可以将一张图片添加至指定编号（请确保编号与图库中已有图片的编号连续，否则会出bug）"
+                                                  + "\n稀音图库 查空，可以快速发现空缺的编号（保险起见建议多查空几次）"
+                                                  + "\n*如首次使用请继续发送“稀音图库 注意事项”");
                         break;
 
                     case "注意事项":
@@ -229,9 +229,9 @@ public class PictureSharing {
         }else {
             int num = fileList.length;
             replayInfo.setReplayMessage("当前图库共有" + num + "张图片"
-                    + "\n请发送“洁哥好图 数字编号”来定向查找图片"
+                    + "\n请发送“稀音好图 数字编号”来定向查找图片"
                     + "\n数字编号请不要超过图库的范围哦~"
-                    + "\n直接发送“洁哥好图”会随机抽取一张图片，并显示其id");
+                    + "\n直接发送“稀音好图”会随机抽取一张图片，并显示其id");
         }
         return replayInfo;
     }
